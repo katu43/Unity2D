@@ -5,6 +5,21 @@ public class Player : MonoBehaviour {
 
 	// 移動スピード
 	public float speed = 5;
+
+	// PlayerBullet
+	public GameObject bullet;
+
+	// Startメソッドをコルーチンとして呼び出す
+	IEnumerator Start(){
+
+		while (true) {
+			// 玉をプレイヤーと同じ位置と角度で作成
+			Instantiate(bullet, transform.position, transform.rotation);
+
+			// 0.05秒待つ
+			yield return new WaitForSeconds(1);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {

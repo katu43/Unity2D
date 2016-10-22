@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  bullet: {fileID: 195302, guid: d185e1c93bb853441b8d4faa04c24c00, type: 2}
 --- !u!50 &566181094
 Rigidbody2D:
   serializedVersion: 2
@@ -201,6 +202,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -213,11 +215,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 435490, guid: d612cedfb450c475eb5482a4fa7ceddf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7230383
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 435490, guid: d612cedfb450c475eb5482a4fa7ceddf, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.2549979
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 435490, guid: d612cedfb450c475eb5482a4fa7ceddf, type: 2}
       propertyPath: m_LocalPosition.z
