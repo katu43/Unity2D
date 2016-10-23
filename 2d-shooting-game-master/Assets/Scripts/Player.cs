@@ -1,23 +1,23 @@
-﻿	using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	// 移動スピード
-	public float speed = 5;
-
-	// PlayerBullet
-	public GameObject bullet;
+	// Spaceshipコンポーネント
+	Spaceship spaceship;
 
 	// Startメソッドをコルーチンとして呼び出す
 	IEnumerator Start(){
 
+		// Spaceshipコンポーネントを取得する
+		spaceship = GetComponent<Spaceship>();
+
 		while (true) {
 			// 玉をプレイヤーと同じ位置と角度で作成
-			Instantiate(bullet, transform.position, transform.rotation);
+			spaceship.Shot(transform);
 
 			// 0.05秒待つ
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(spaceship.shotDelay);
 		}
 	}
 	
@@ -40,6 +40,6 @@ public class Player : MonoBehaviour {
 		Vector2 direction = new Vector2(x, y).normalized;
 
 		// 移動する向きとスピードを代入
-		GetComponent<Rigidbody2D>().velocity = direction * this.speed;
+		spaceship.Move(direction);
 	}
 }
